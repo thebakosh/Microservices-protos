@@ -4,7 +4,7 @@ package payment.v1;
 
 import "google/protobuf/timestamp.proto";
 
-option go_package = "assignment1-adp2/generated/payment/v1;paymentpb";
+option go_package = "github.com/thebakosh/Microservices-generated/payment/v1;paymentpb";
 
 service PaymentService {
   rpc ProcessPayment(PaymentRequest) returns (PaymentResponse);
