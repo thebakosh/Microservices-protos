@@ -4,10 +4,11 @@ package payment.v1;
 
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/thebakosh/Microservices-generated/payment/v1;paymentpb";
+option go_package = "assignment1-adp2/generated/payment/v1;paymentpb";
 
 service PaymentService {
   rpc ProcessPayment(PaymentRequest) returns (PaymentResponse);
+  rpc GetPaymentStats(GetPaymentStatsRequest) returns (PaymentStats);
 }
 
 message PaymentRequest {
@@ -19,4 +20,13 @@ message PaymentResponse {
   string transaction_id = 1;
   string status = 2;
   google.protobuf.Timestamp processed_at = 3;
+}
+
+message GetPaymentStatsRequest {}
+
+message PaymentStats {
+  int64 total_count = 1;
+  int64 authorized_count = 2;
+  int64 declined_count = 3;
+  int64 total_amount = 4;
 }

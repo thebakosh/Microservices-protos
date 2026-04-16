@@ -4,7 +4,7 @@ package order.v1;
 
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/thebakosh/Microservices-generated/order/v1;orderpb";
+option go_package = "assignment1-adp2/generated/order/v1;orderpb";
 
 service OrderService {
   rpc SubscribeToOrderUpdates(OrderRequest) returns (stream OrderStatusUpdate);
